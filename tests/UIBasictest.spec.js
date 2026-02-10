@@ -1,5 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
+//To run all test files : npx playwright test
+
 test('Page Playwright Test', async ({ page }) => {
     await page.goto('https://google.com');
     console.log(await page.title());
@@ -89,7 +91,7 @@ test('UI Controls', async({browser})=>{
     await signIn.click();
 });
 
-test.only('Child Windows Handling', async({browser})=>{
+test('Child Windows Handling', async({browser})=>{
     const context = await browser.newContext();
     const page = await context.newPage();
 
