@@ -1,6 +1,24 @@
 const { test, expect } = require('@playwright/test');
 
-//To run all test files : npx playwright test
+// ==================== Playwright Test Execution Commands ====================
+
+// Run all test files
+// npx playwright test
+
+// Run a specific test file
+// npx playwright test tests/ClientApp.spec.js
+
+// Run all test files in UI mode
+// npx playwright test --ui
+
+// Run a specific test file in debug (Inspector) mode
+// npx playwright test tests/SpecialLocators.spec.js --debug
+
+// Launch Playwright Codegen for recording tests
+// npx playwright codegen https://rahulshettyacademy.com/angularpractice/
+
+// ============================================================================
+
 
 test('Page Playwright Test', async ({ page }) => {
     await page.goto('https://google.com');

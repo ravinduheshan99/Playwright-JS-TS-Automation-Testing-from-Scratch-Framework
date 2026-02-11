@@ -1,7 +1,5 @@
 const { test, expect } = require('@playwright/test');
 
-//To run a single test file : npx playwright test tests/ClientApp.spec.js 
-
 test('Client App End to End Automation Scenario', async({browser})=>{
     //Create a fresh, isolated browser context for this test run (clean cookies/localStorage/session).
     const context = await browser.newContext();

@@ -1,7 +1,5 @@
 const { test, expect } = require('@playwright/test');
 
-//To run all test files with playwright : npx playwright test --ui 
-
 test('Playwright Special Locators', async({browser})=>{
     const context = await browser.newContext();
     const page = await context.newPage();

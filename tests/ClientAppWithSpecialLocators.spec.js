@@ -1,7 +1,5 @@
 const { test, expect } = require('@playwright/test');
 
-// To run only this test file: npx playwright test tests/ClientApp.spec.js 
-
 test('Client App End to End Automation Scenario', async ({ browser }) => {
     // Create an isolated browser context to avoid sharing cookies/session with other tests
     const context = await browser.newContext();
@@ -19,11 +17,7 @@ test('Client App End to End Automation Scenario', async ({ browser }) => {
     await page.locator(".card-body").last().waitFor();
 
     // Filter the product list by visible text to target the correct card before clicking Add To Cart
-    await page
-        .locator(".card-body")
-        .filter({ hasText: 'ZARA COAT 3' })
-        .getByRole("button", { name: ' Add To Cart' })
-        .click();
+    await page.locator(".card-body").filter({ hasText: 'ZARA COAT 3' }).getByRole("button", { name: ' Add To Cart' }).click();
 
     await page.getByRole("listitem").getByRole("button", { name: 'Cart' }).click();
     await page.locator("div li").last().waitFor();
@@ -38,7 +32,7 @@ test('Client App End to End Automation Scenario', async ({ browser }) => {
     await page.getByRole("button", { name: ' Sri Lanka' }).click();
 
     // Verify logged-in user identity before placing the order
-    await expect(page.getByLabel("test@gmail.com")).toBeVisible();
+    await expect(page.getByText("test@gmail.com")).toBeVisible();
 
     await page.getByText("PLACE ORDER").click();
 
