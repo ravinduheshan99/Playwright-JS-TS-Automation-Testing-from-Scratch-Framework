@@ -1,0 +1,15 @@
+[
+    {
+        "loginEmail": "test@gmail.com",
+        "loginPassword": "test@123",
+        "productName": "ZARA COAT 3",
+        "country": "Sri Lanka"
+    },
+
+    {
+        "loginEmail": "test2@gmail.com",
+        "loginPassword": "test2@123",
+        "productName": "ADIDAS ORIGINAL",
+        "country": "Sri Lanka"
+    }
+]
