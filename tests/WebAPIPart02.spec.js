@@ -19,7 +19,7 @@ test.beforeAll(async({browser})=>{
     webContext = await browser.newContext({storageState:'state.json'});
 });
 
-test('Client App End to End Automation Scenario', async()=>{
+test('@API Client App End to End Automation Scenario', async()=>{
      //Create a new page per test while reusing the authenticated context to keep test runs isolated.
      const page = await webContext.newPage();
 
@@ -106,7 +106,7 @@ test('Client App End to End Automation Scenario', async()=>{
 
 });
 
-test('Client App End to End Automation Scenario 2', async()=>{
+test('@API Client App End to End Automation Scenario 2', async()=>{
      //Reuse the authenticated context while starting with a fresh page for this test.
      const page = await webContext.newPage();
 

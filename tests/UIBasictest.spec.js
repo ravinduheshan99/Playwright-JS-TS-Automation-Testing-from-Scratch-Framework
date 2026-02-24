@@ -2,6 +2,9 @@ const { test, expect } = require('@playwright/test');
 
 // ==================== Playwright Test Execution Commands ====================
 
+// install node js and pass in the system path variables
+// npm init playwright
+
 // Run all test files
 // npx playwright test
 
@@ -17,6 +20,33 @@ const { test, expect } = require('@playwright/test');
 // Launch Playwright Codegen for recording tests
 // npx playwright codegen https://rahulshettyacademy.com/angularpractice/
 
+// To run playwright.config2.js:
+// npx playwright test tests/ClientAppPageObjects.spec.js --config playwright.config2.js
+
+// To run playwright.config2.js with specific project:
+// npx playwright test tests/ClientAppPageObjects.spec.js --config playwright.config2.js --project=safariExecution
+
+// Run testcases which have @Web annotation only
+// npx playwright test --grep @Web
+
+// Install reporting & excel dependencies
+// npm install exceljs
+// npm i -D @playwright/test allure-playwright
+// npm install -g allure-commandline --save-dev
+
+// Run tests with Allure reporter
+// npx playwright test --grep @Web --reporter=line,allure-playwright
+// allure generate ./allure-results --clean
+// allure open ./allure-report
+
+// Run npm scripts
+// npm run APITests , npm run WebTests, npm run SafariNewConfig 
+
+// Jenkins trigger
+// java -jar jenkins.war -httpPort=9090
+// Windows: npm run "%Script%"
+// Mac: shell - npm run "$Script"
+
 // ============================================================================
 
 
@@ -27,7 +57,7 @@ test('Page Playwright Test', async ({ page }) => {
     await expect(page).toHaveTitle('Google');
 });
 
-test('Browser Context Playwright Test', async ({ browser }) => {
+test('@Web Browser Context Playwright Test', async ({ browser }) => {
     // Creates an isolated context so the test runs with a clean session (no shared cookies/storage).
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -64,7 +94,7 @@ test('Browser Context Playwright Test', async ({ browser }) => {
     console.log(allTitles);
 });
 
-test('UI Controls', async({browser})=>{
+test('@Web UI Controls', async({browser})=>{
     // Separate context keeps this UI-controls test independent from other tests' login state.
     const context = await browser.newContext();
     const page = await context.newPage();

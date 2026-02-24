@@ -9,7 +9,7 @@ const dataSet = JSON.parse(JSON.stringify(require('../utils/PlaceOrderTestData.j
 // Loop over each dataset entry to create separate tests dynamically.
 for (const data of dataSet) {
 
-    test(`Client App End to End Automation Scenario ${data.productName}`, async ({ page }) => {
+    test(`@Web Client App End to End Automation Scenario ${data.productName}`, async ({ page }) => {
         const poManager = new POManager(page);
 
         // Login flow using the Page Object for landing and authentication pages.

@@ -4,15 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test tests/WebAPIPart01.spec.js --headed"
+    "test": "npx playwright test tests/WebAPIPart01.spec.js --headed",
+    "regression": "npx playwright test",
+    "webTests": "npx playwright test --grep @Web",
+    "APITests": "npx playwright test --grep @API",
+    "SafariNewConfig": "npx playwright test tests/ClientAppPageObjects.spec.js --config playwright.config2.js --project=safariExecution"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.58.0",
-    "@types/node": "^25.0.10"
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.0.10",
+    "allure-playwright": "^3.4.5"
   },
   "dependencies": {
     "exceljs": "^4.4.0"

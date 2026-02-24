@@ -1,5 +1,9 @@
 const {test, expect} = require('@playwright/test');
 
+//test.describe.configure({mode:'parallel'});
+//test.describe.configure({mode:'serial'});
+test.describe.configure({mode:'default'});
+
 test('Taking Screenshots', async({page})=>{
     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
     await expect(page.locator("#displayed-text")).toBeVisible();
@@ -11,7 +15,7 @@ test('Taking Screenshots', async({page})=>{
     await expect(page.locator("#displayed-text")).toBeHidden();
 });
 
-test.only('Visual Comparison', async ({ page }) => {
+test('Visual Comparison', async ({ page }) => {
   await page.goto('https://google.com/');
   // Visual regression assertion compares current UI against stored baseline image.
   await expect(page).toHaveScreenshot('landingPage.png');

@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test('Popup Validation', async ({ browser }) => {
+test('@Web Popup Validation', async ({ browser }) => {
     // New context keeps alerts/popups and storage isolated from other tests
     const context = await browser.newContext();
     const page = await context.newPage();
