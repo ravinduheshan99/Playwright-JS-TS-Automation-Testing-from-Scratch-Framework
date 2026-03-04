@@ -47,6 +47,11 @@ const { test, expect } = require('@playwright/test');
 // Windows: npm run "%Script%"
 // Mac: shell - npm run "$Script"
 
+//Install Typescript
+//npm install -g typescript
+//to concert ts file to js file - tsc demo1.ts
+//run the converted js file - node demo1.js
+
 // ============================================================================
 
 
