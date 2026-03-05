@@ -52,8 +52,17 @@ const { test, expect } = require('@playwright/test');
 //to concert ts file to js file - tsc demo1.ts
 //run the converted js file - node demo1.js
 
-// ============================================================================
+//install cucumber
+//npm install @cucumber/cucumber
+//npx cucumber-js
+//npx cucumber-js features/ErrorValidations.feature
+//npx cucumber-js --tags "@Regression"
+//npx cucumber-js features/Ecommerce.feature --parallel 2
+//npx cucumber-js features/Ecommerce.feature --parallel 2 --format html:cucumber-report.html
+//npx cucumber-js --tags "@Regression" --retry 1 --format html:cucumber-report.html
+//npm run CucumberRegression
 
+// ============================================================================
 
 test('Page Playwright Test', async ({ page }) => {
     await page.goto('https://google.com');

@@ -8,7 +8,8 @@
     "regression": "npx playwright test",
     "webTests": "npx playwright test --grep @Web",
     "APITests": "npx playwright test --grep @API",
-    "SafariNewConfig": "npx playwright test tests/ClientAppPageObjects.spec.js --config playwright.config2.js --project=safariExecution"
+    "SafariNewConfig": "npx playwright test tests/ClientAppPageObjects.spec.js --config playwright.config2.js --project=safariExecution",
+    "CucumberRegression": "npx cucumber-js --tags '@Regression' --retry 1 --format html:cucumber-report.html"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@cucumber/cucumber": "^12.7.0",
     "exceljs": "^4.4.0"
   }
 }
