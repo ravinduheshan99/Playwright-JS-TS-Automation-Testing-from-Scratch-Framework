@@ -86,6 +86,7 @@ export default defineConfig(
   }
 );
 */
+
 // then run npm uninstall @azure/microsoft-playwright-testing
 // then run npm install @azure/playwright @azure/identity
 // then run npm install @playwright/test@latest
@@ -112,6 +113,12 @@ export default defineConfig(
 //az login and select the subscription where the resource is created
 //set PLAYWRIGHT_SERVICE_URL=wss://westeurope.api.playwright.microsoft.com/playwrightworkspaces/fb8f6efc-153f-418f-8c07-c7ca5d2822da/browsers
 //npx playwright test --config=playwright.service.config.js --workers=20
+
+//sign in to Azure Devops using the same free subscription
+//push the repo in Azure Devops and create a pipeline with the yaml file as added in the azure-pipeline.yml to run the tests in Azure Playwright Service
+//create a service connection in Azure Devops with the same subscription details to authenticate the pipeline with Azure to use the Playwright Service
+//create a pipeline variable named PLAYWRIGHT_SERVICE_URL and set the value as the same wss url as set in the local environment variable to use the Playwright Service in Azure for test execution from Azure Devops pipeline
+//run the pipeline and view the results in Azure Devops and Azure Playwright Service dashboards
 
 // ============================================================================
 
