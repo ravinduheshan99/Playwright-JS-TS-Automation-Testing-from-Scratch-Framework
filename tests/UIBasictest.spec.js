@@ -62,6 +62,57 @@ const { test, expect } = require('@playwright/test');
 //npx cucumber-js --tags "@Regression" --retry 1 --format html:cucumber-report.html
 //npm run CucumberRegression
 
+// Create playwright workspace resource in Azure
+// Install Azure CLI
+// run npm init @azure/microsoft-playwright-testing
+
+// then playwright.service.config.js will be created in the root folder of the project with the below content.
+
+/*
+const { defineConfig } = require('@playwright/test');
+const { getServiceConfig, ServiceOS } = require('@azure/microsoft-playwright-testing');
+const config = require('./playwright.config');
+
+export default defineConfig(
+  config,
+  getServiceConfig(config, {
+    exposeNetwork: '<loopback>',
+    timeout: 30000,
+    os: ServiceOS.LINUX,
+    useCloudHostedBrowsers: true // Set to false if you want to only use reporting and not cloud hosted browsers
+  }),
+  {
+    reporter: [['list'], ['@azure/microsoft-playwright-testing/reporter']],
+  }
+);
+*/
+// then run npm uninstall @azure/microsoft-playwright-testing
+// then run npm install @azure/playwright @azure/identity
+// then run npm install @playwright/test@latest
+
+// Update the config as per below.
+
+/*
+const { defineConfig } = require('@playwright/test');
+import { createAzurePlaywrightConfig, ServiceOS } from '@azure/playwright';
+import { DefaultAzureCredential } from '@azure/identity';
+import config from './playwright.config';
+
+export default defineConfig(
+  config,
+  createAzurePlaywrightConfig(config, {
+    exposeNetwork: '<loopback>',
+    connectTimeout: 30000,
+    os: ServiceOS.LINUX,
+    credential: new DefaultAzureCredential() // if serviceAuthType is ENTRA_ID (default)
+  })
+);
+*/
+
+//az login and select the subscription where the resource is created
+//set PLAYWRIGHT_SERVICE_URL=wss://westeurope.api.playwright.microsoft.com/playwrightworkspaces/fb8f6efc-153f-418f-8c07-c7ca5d2822da/browsers
+//npx playwright test --config=playwright.service.config.js --workers=20
+
 // ============================================================================
 
 test('Page Playwright Test', async ({ page }) => {
