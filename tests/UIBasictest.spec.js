@@ -120,6 +120,9 @@ export default defineConfig(
 //create a pipeline variable named PLAYWRIGHT_SERVICE_URL and set the value as the same wss url as set in the local environment variable to use the Playwright Service in Azure for test execution from Azure Devops pipeline
 //run the pipeline and view the results in Azure Devops and Azure Playwright Service dashboards
 
+//Playwright MCP (Model Context Protocol) Server integration with VSCode:
+//Playwright Agents Integration with VSCode:
+//npx playwright init-agents --loop=vscode
 // ============================================================================
 
 test('Page Playwright Test', async ({ page }) => {

@@ -1,3 +1,15 @@
+//prompt
+/*
+Perform below steps manually on browser to understand flow and grab real locators, and then frame a playwright test as per existing framework pageobject standards. create that test file in ravinduheshan99.tests package path
+
+navigate to https://rahulshettyacademy.com/loginpagePractise/
+enter username as "rahulshettyacademy" and password as "learning"
+select checkbox
+click on Sign in button
+wait until page is navigated to https://rahulshettyacademy.com/angularpractice/shop page
+verify if iphone X product is present on the page
+*/
+
 const { test, expect } = require('@playwright/test');
 const { POManager } = require('../pageobjects/POManager');
 
